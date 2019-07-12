@@ -7,15 +7,18 @@ public class FizzBuzz {
             throw new IllegalArgumentException();
         }
 
-        if (value % 5 == 0 && value % 7 == 0) {
+        var dividableBy5 = (value % 5 == 0);
+        var dividableBy7 = (value % 7 == 0);
+
+        if (dividableBy5 && dividableBy7) {
             return "fizz buzz";
         }
 
-        if (value % 5 == 0) {
+        if (dividableBy5) {
             return "fizz";
         }
 
-        if (value % 7 == 0) {
+        if (dividableBy7) {
             return "buzz";
         }
 
