@@ -6,3 +6,4 @@ build
 
 # Ignore InelliJ Idea config dir
 .idea
+out
