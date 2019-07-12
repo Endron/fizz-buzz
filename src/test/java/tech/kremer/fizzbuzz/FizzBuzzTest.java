@@ -16,4 +16,11 @@ class FizzBuzzTest {
     void fizzBuzz_returnOriginalValue(int value) {
         assertEquals(String.valueOf(value), fizzBuzz.fizzBuzz(value));
     }
+
+    @DisplayName("'fizz' is returned if the value is dividable by 5 but not by 7")
+    @ParameterizedTest(name = "for value = {arguments}")
+    @ValueSource(ints = {5, 10, 15, 20, 25, 30, 40, 45, 50, 55, 60, 65, 75})
+    void fizzBuzz_returnFizz(int value) {
+        assertEquals("fizz", fizzBuzz.fizzBuzz(value));
+    }
 }
