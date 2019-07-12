@@ -28,6 +28,13 @@ class FizzBuzzTest {
     @ParameterizedTest(name = "for value = {arguments}")
     @ValueSource(ints = {7, 14, 21, 42, 49, 56, 63, 77})
     void fizzBuzz_returnBuzz(int value) {
-        assertEquals("buzz",fizzBuzz.fizzBuzz(value));
+        assertEquals("buzz", fizzBuzz.fizzBuzz(value));
+    }
+
+    @DisplayName("'fizz buzz' is returned if the value is dividable by both 7 and 5")
+    @ParameterizedTest(name = "for value = {arguments}")
+    @ValueSource(ints = {35, 70, 105, 140, 175, 210})
+    void fizzBuzz_returnFizzBuzz(int value) {
+        assertEquals("fizz buzz", fizzBuzz.fizzBuzz(value));
     }
 }
