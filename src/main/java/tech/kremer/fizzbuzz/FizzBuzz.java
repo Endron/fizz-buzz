@@ -7,6 +7,10 @@ public class FizzBuzz {
             return "fizz";
         }
 
+        if (value % 7 == 0) {
+            return "buzz";
+        }
+
         return String.valueOf(value);
     }
 }
