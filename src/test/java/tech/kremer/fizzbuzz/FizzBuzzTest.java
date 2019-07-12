@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FizzBuzzTest {
 
@@ -36,5 +37,15 @@ class FizzBuzzTest {
     @ValueSource(ints = {35, 70, 105, 140, 175, 210})
     void fizzBuzz_returnFizzBuzz(int value) {
         assertEquals("fizz buzz", fizzBuzz.fizzBuzz(value));
+    }
+
+    @DisplayName("'InvalidArgumentException' is thrown for values < 1")
+    @ParameterizedTest(name = "for value = {arguments}")
+    @ValueSource(ints = {0, -1, -2, -5, -7, -35})
+    void fizzBuzz_greaterZero(int value) {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> fizzBuzz.fizzBuzz(value)
+        );
     }
 }
